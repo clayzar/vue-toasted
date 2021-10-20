@@ -14,6 +14,9 @@
   </a>
  </p>
 
+## Updated for Vue 3
+Adjusted plugin installation to use Vue 3 specification
+
 ## Introduction
 
 Vue Toasted is one of the best toast plugins available for VueJS. It's used by VueJS, Laravel, NuxtJS and trusted by many more organizations. It's responsive, touch compatible, easy to use, attractive and feature rich with icons, actions, and more!
@@ -54,13 +57,13 @@ Checkout the <a target="_blank" href="https://shakee93.github.io/vue-toasted/"> 
 #### Install using npm
 ```bash
 # install it via npm
-npm install vue-toasted --save
+npm install @clayzar/vue-toasted --save
 ```
 
 #### Install using yarn
 ```bash
 # install it via yarn
-yarn add vue-toasted
+yarn add @clayzar/vue-toasted
 ```
 
 #### Direct usage with html
@@ -85,10 +88,10 @@ It's simple. A couple of lines is all you need.
 
 ```javascript
 // register the plugin on vue
-import Toasted from 'vue-toasted';
+import Toasted from '@clayzar/vue-toasted';
 
 // or you can use it with require
-var Toasted = require('vue-toasted').default
+var Toasted = require('@clayzar/vue-toasted').default
 
 Vue.use(Toasted)
 
@@ -168,9 +171,9 @@ onClick|Function(e,toastObject) |`null`|  onClick Function of action
             text : 'Undo',
             // router navigation
             push : {
-            	name : 'somewhere',
-            	// this will prevent toast from closing
-            	dontClose : true
+                name : 'somewhere',
+                // this will prevent toast from closing
+                dontClose : true
              }
         }
     ]
@@ -252,17 +255,17 @@ Adding vue-router to vue-toasted where you can use it on toast actions.
 
 // your app router instance
 var router = new VueRouter({
-	mode: 'history',
-	routes: [{
-		path: '/foo',
-		name : 'foo-name'
-	}],
-	linkActiveClass: "active"
+    mode: 'history',
+    routes: [{
+        path: '/foo',
+        name : 'foo-name'
+    }],
+    linkActiveClass: "active"
 });
 
 // pass it to vue toasted as below..
 Vue.use(Toasted, {
-	router
+    router
 });
 ```
 
@@ -282,7 +285,7 @@ Take a look at the below examples
 
 ##### Simple Example
 ```javascript
-import Toasted from 'vue-toasted';
+import Toasted from '@clayzar/vue-toasted';
 Vue.use(Toasted);
 
 // Lets Register a Global Error Notification Toast.
@@ -313,7 +316,7 @@ this.$toasted.global.my_app_error({
 you can register a toast with payload like below on the example.
 
 ```javascript
-import Toasted from 'vue-toasted';
+import Toasted from '@clayzar/vue-toasted';
 Vue.use(Toasted);
 
 // options to the toast
@@ -328,7 +331,7 @@ Vue.toasted.register('my_app_error',
 
         // if there is no message passed show default message
         if(! payload.message) {
-    	    return "Oops.. Something Went Wrong.."
+            return "Oops.. Something Went Wrong.."
         }
 
         // if there is a message show it with the message
